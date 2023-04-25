@@ -1,23 +1,19 @@
 import Image from "next/image";
-import profilePic from "../images/zip/red.webp"
-import { getCurrentUser } from "../app/utils/data"
+import { getCurrentUser } from "../utils/data";
 
-const { name, email } = getCurrentUser;
+const { name, email, avatar } = getCurrentUser();
+
 
 const TopContent = () => {
 
     return (
-        <div className="">
-            <Image
-                className="mx-auto rounded-full border-black border-2 mt-[80px]"
-                src={profilePic}
-                alt="LinkBarge"
-                width={200}
-                height={200}
-            />
-            <p className="flex justify-center items-center h1 text-black text-[65px]">Mat Gargano</p>
+        <div className="grid justify-center justify-items-center">
+            {avatar && <Image className="rounded-full" src={avatar} alt={name} height="145" width="145" />}
+            {name && <h1 className="h1">{name}</h1> }
+            {name && <p className="h2">{email}</p> }
         </div>
-    )   
+    )
 }
 
-export default TopContent
+
+export default TopContent;
