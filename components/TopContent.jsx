@@ -9,13 +9,13 @@ const TopContent = () => {
     return (
         <div className="">
             <Image
-                className="mx-auto rounded-full border-black border-2 mt-[40px]"
+                className="mx-auto rounded-full border-black border-2 mt-[80px]"
                 src={profilePic}
                 alt="LinkBarge"
                 width={200}
                 height={200}
             />
-            <p className="flex justify-center items-center">Mat Gargano</p>
+            <p className="flex justify-center items-center h1 text-black text-[65px]">Mat Gargano</p>
         </div>
     )   
 }
