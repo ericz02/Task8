@@ -4,7 +4,7 @@ import cargoBlack from "../images/zip/cargo-black.svg"
 const Footer = () => {
 
     return (
-        <footer className="barge flex justify-cbetween items-center">
+        <footer className="barge flex justify-between items-center">
             <p className="h2">Copyright 2023</p>
             <Image
                 src={cargoBlack}

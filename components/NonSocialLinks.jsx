@@ -1,42 +1,27 @@
-import Image from "next/image"
-import snapchat from "../images/zip/snapchat.svg"
-import facebook from "../images/zip/facebook.svg"
-import instagram from "../images/zip/instagram.svg"
-import twitter from "../images/zip/twitter.svg"
+"use client";
+import { useEffect, useState } from "react";
+import { getLinksLinks } from "../utils/data";
 
 const NonSocialLinks = () => {
+  const [links, setLinks] = useState([]);
 
-    return (
-        <div className="flex justify-center">
+  useEffect(() => {
+    setLinks(getLinksLinks());
+  }, []);
 
-        <Image
-            className=""
-            src={snapchat}
-            width={46}
-            height={43}
-        />
+  return (
+    <div className="mb-20">
+      {links.map((link) => {
+        return (
+          <div key={link.id}>
+            <button className="text-center button h2 w-80 mx-auto text-lg">
+              {link.title}
+            </button>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
-        <Image 
-            src={facebook} 
-            width={46} 
-            height={46}
-        />
-
-        <Image 
-            src={instagram} 
-            width={46} 
-            height={46}
-        />
-
-        <Image 
-            src={twitter} 
-            width={46} 
-            height={38}
-        />
-
-
-        </div>
-    )
-}
-
-export default NonSocialLinks
+export default NonSocialLinks;

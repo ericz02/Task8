@@ -6,8 +6,8 @@ export default async function Home() {
   return (
     <main>
       <TopContent />
-      <NonSocialLinks />
       <SocialLinks />
+      <NonSocialLinks />
     </main>
   );
 }
